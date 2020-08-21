@@ -26,7 +26,10 @@ try {
 
   const repData = i18nData.map(i => {
     const id = i.id;
-    i.source = getMessage(id).source;
+    const msg = getMessage(id);
+    if (msg) {
+      i.source = msg.source;
+    }
     return i;
   })
 

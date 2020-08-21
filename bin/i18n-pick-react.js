@@ -103,7 +103,7 @@ try {
 }
 
 data.forEach(item => {
-    item.source.forEach(src => {
+    item.source && item.source.forEach(src => {
         const [filename, line, column] = src.location.split('#');
         const opts = {
             key: config.getKey ? config.getKey(item) : item.id,
